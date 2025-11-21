@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 01</title>
+</head>
+<style>
+#linha {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-top: 30px;
+}
+#botao {
+    background: blue;
+    color: white;
+    border: none;
+    padding: 8px 25px;
+    font-size: 16px;
+    border-radius: 4px;
+}
+input {
+    padding: 4px 6px;
+}
+
+</style>
+<body>
+    <h1 style="text-align:center;">Atividade 01</h1>
+    <div id="linha">
+        <div>
+            <label>Nome <br> Completo:</label>
+            <input type="text" placeholder="Digite seu nome" id="nome-completo" autocomplete="off">
+        </div>
+        <div>
+            <button id="botao">>></button>
+        </div>
+        <div>
+            <label>Nome:</label>
+            <input type="text" id="nome"><br>
+            <br>
+            <label>Sobrenome:</label>
+            <input type="text" id="sobrenome"> 
+        </div>
+    </div>
+</body>
+<script>
+   document.getElementById('botao').onclick = function() {
+  var completo = document.getElementById('nome-completo').value;
+  var partes = completo.split(' ');
+  document.getElementById('nome').value = partes[0] || '';
+  document.getElementById('sobrenome').value = partes.slice(1).join(' ') || '';
+}
+</script>
+</html>
