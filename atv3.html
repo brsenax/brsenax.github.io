@@ -280,7 +280,19 @@
             <form action="" class="montador">
                 <div class="box montador-conteudo">
                     <div class="peca">
-                        <label class="peca-titulo">Braços</label>
+                        <label class="peca-titulo" data-peca="Bracos">Braços</label>
+                        <div class="controle">
+                            <button type="button" class="controle-ajuste">-</button>
+                            <input type="text" class="controle-contador" value="00">
+                            <button type="button" class="controle-ajuste">+</button>
+
+                        </div>
+                    </div>
+
+                    <hr class="linha">
+
+                    <div class="peca">
+                        <label class="peca-titulo" data-peca="Blindagem">Blindagem</label>
                         <div class="controle">
                             <button class="controle-ajuste">-</button>
                             <input type="text" class="controle-contador" value="00">
@@ -291,44 +303,34 @@
                     <hr class="linha">
 
                     <div class="peca">
-                        <label class="peca-titulo">Blindagem</label>
+                        <label class="peca-titulo" data-peca="Nucleos">Núcleos</label>
                         <div class="controle">
-                            <button class="controle-ajuste">-</button>
-                            <input type="text" class="controle-contador" value="00">
-                            <button class="controle-ajuste">+</button>
+                           <button type="button" class="controle-ajuste">-</button>                          
+                           <input type="text" class="controle-contador" value="00">
+                           <button type="button" class="controle-ajuste">+</button>
                         </div>
                     </div>
 
                     <hr class="linha">
 
                     <div class="peca">
-                        <label class="peca-titulo">Núcleos</label>
+                        <label class="peca-titulo" data-peca="Pernas">Pernas</label>
                         <div class="controle">
-                            <button class="controle-ajuste">-</button>
-                            <input type="text" class="controle-contador" value="00">
-                            <button class="controle-ajuste">+</button>
+                           <button type="button" class="controle-ajuste">-</button>
+                           <input type="text" class="controle-contador" value="00">
+                           <button type="button" class="controle-ajuste">+</button>
                         </div>
                     </div>
 
                     <hr class="linha">
 
                     <div class="peca">
-                        <label class="peca-titulo">Pernas</label>
+                        <label class="peca-titulo" data-peca="Foguetes">Foguetes</label>
                         <div class="controle">
-                            <button class="controle-ajuste">-</button>
+                            <button type="button" class="controle-ajuste">-</button>
                             <input type="text" class="controle-contador" value="00">
-                            <button class="controle-ajuste">+</button>
-                        </div>
-                    </div>
+                            <button type="button" class="controle-ajuste">+</button>
 
-                    <hr class="linha">
-
-                    <div class="peca">
-                        <label class="peca-titulo">Foguetes</label>
-                        <div class="controle">
-                            <button class="controle-ajuste">-</button>
-                            <input type="text" class="controle-contador" value="00">
-                            <button class="controle-ajuste">+</button>
                         </div>
                     </div>
                 </div>
@@ -338,40 +340,101 @@
         </section>        
     </main>
     <script>
-        const CORESROBOTRON = [
-    "robotron/robotron.png",
-    "robotron/robotron-amarelo.png",
-    "robotron/robotron-azul.png",
-    "robotron/robotron-branco.png",
-    "robotron/robotron-preto.png",
-    "robotron/robotron-rosa.png",
-    "robotron/robotron-vermelho.png",
-]
-function avancarCorRobotron(){
-    let robotron = document.getElementById("robotron")
-    console.log(robotron)
-    let corAtualRobotron = robotron.getAttribute("src")
-    console.log(corAtualRobotron)
-    let indiceCorAtualRobotron  = CORESROBOTRON.indexOf(corAtualRobotron)
-    console.log(indiceCorAtualRobotron)
-    let novoIndiceCorRobotrono = (indiceCorAtualRobotron < CORESROBOTRON.length - 1) ? indiceCorAtualRobotron + 1: 0
-    console.log(novoIndiceCorRobotrono)
-    robotron.src = CORESROBOTRON[novoIndiceCorRobotrono]
-    console.log(robotron.src)
-}
-function voltarCorRobotron() {
-    let robotron = document.getElementById("robotron")
-    let corAtualRobotron = robotron.getAttribute("src")
-    let indiceCorAtualRobotron = CORESROBOTRON.indexOf(corAtualRobotron)
+   document.addEventListener("DOMContentLoaded", () => {
 
-    // se estiver na primeira cor (0), volta para a última
-    let novoIndiceCorRobotron = 
-        (indiceCorAtualRobotron > 0) 
-            ? indiceCorAtualRobotron - 1 
-            : CORESROBOTRON.length - 1
+    const CORESROBOTRON = [
+        "robotron/robotron.png",
+        "robotron/robotron-amarelo.png",
+        "robotron/robotron-azul.png",
+        "robotron/robotron-branco.png",
+        "robotron/robotron-preto.png",
+        "robotron/robotron-rosa.png",
+        "robotron/robotron-vermelho.png",
+    ];
 
-    robotron.src = CORESROBOTRON[novoIndiceCorRobotron]
-}
+    function avancarCorRobotron(){
+        let robotron = document.getElementById("robotron");
+        let corAtualRobotron = robotron.getAttribute("src");
+        let indiceCorAtualRobotron  = CORESROBOTRON.indexOf(corAtualRobotron);
+        let novoIndice = (indiceCorAtualRobotron < CORESROBOTRON.length - 1) 
+            ? indiceCorAtualRobotron + 1 : 0;
+        robotron.src = CORESROBOTRON[novoIndice];
+    }
+
+    function voltarCorRobotron() {
+        let robotron = document.getElementById("robotron");
+        let corAtualRobotron = robotron.getAttribute("src");
+        let indiceCorAtualRobotron = CORESROBOTRON.indexOf(corAtualRobotron);
+        let novoIndice = 
+            (indiceCorAtualRobotron > 0) 
+                ? indiceCorAtualRobotron - 1 
+                : CORESROBOTRON.length - 1;
+        robotron.src = CORESROBOTRON[novoIndice];
+    }
+
+    window.avancarCorRobotron = avancarCorRobotron;
+    window.voltarCorRobotron = voltarCorRobotron;
+
+    // Estatísticas
+    const estatisticas = {
+        forca: 768,
+        poder: 630,
+        energia: 289,
+        velocidade: 597,
+    };
+
+    const pecas = {
+    Bracos:    { forca: 40, poder: 30, energia: -10, velocidade: -5 },
+    Blindagem: { forca: 20, poder: 0,  energia: 30,  velocidade: -10 },
+    Nucleos:   { forca: 0,  poder: 50, energia: 40,  velocidade: 0 },
+    Pernas:    { forca: 10, poder: 0,  energia: -5, velocidade: 40 },
+    Foguetes:  { forca: 30, poder: 50, energia: -30, velocidade: 20 }
+};
+
+    const estatisticasDOM = {
+        forca: document.querySelectorAll(".estatistica-numero")[0],
+        poder: document.querySelectorAll(".estatistica-numero")[1],
+        energia: document.querySelectorAll(".estatistica-numero")[2],
+        velocidade: document.querySelectorAll(".estatistica-numero")[3],
+    };
+
+    const controles = document.querySelectorAll(".controle");
+
+    controles.forEach(controle => {
+        const tituloPeca = controle.parentElement
+            .querySelector(".peca-titulo")
+            .dataset.peca;
+
+
+        const botaoMenos = controle.querySelectorAll(".controle-ajuste")[0];
+        const contador = controle.querySelector(".controle-contador");
+        const botaoMais = controle.querySelectorAll(".controle-ajuste")[1];
+
+        botaoMais.addEventListener("click", e => {
+            e.preventDefault();
+            contador.value = String(Number(contador.value) + 1).padStart(2, "0");
+            atualizarEstatisticas(tituloPeca, "mais");
+        });
+
+        botaoMenos.addEventListener("click", e => {
+            e.preventDefault();
+            if (Number(contador.value) > 0) {
+                contador.value = String(Number(contador.value) - 1).padStart(2, "0");
+                atualizarEstatisticas(tituloPeca, "menos");
+            }
+        });
+    });
+
+    function atualizarEstatisticas(peca, operacao) {
+        const efeitos = pecas[peca];
+
+        for (let stat in efeitos) {
+            estatisticas[stat] += (operacao === "mais") ? efeitos[stat] : -efeitos[stat];
+            estatisticasDOM[stat].innerText = estatisticas[stat];
+        }
+    }
+});
+
     </script>
 </body>
 </html>
