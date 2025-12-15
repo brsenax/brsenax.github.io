@@ -1,0 +1,895 @@
+<!doctype html>
+<html lang="pt-br">
+<head>
+ <meta charset="utf-8">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+ <!-- BOOTSTRAP CSS -->
+ <link
+   href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+   rel="stylesheet">
+
+
+ <title>Restaurante - Site Base</title>
+</head>
+<body>
+
+
+ <!-- ================== NAVBAR ================== -->
+ <nav class="navbar navbar-expand-lg navbar-dark bg-danger sticky-top">
+   <div class="container">
+     <a class="navbar-brand" href="#">SUSHI HOUSE</a>
+
+
+     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menuNavbar">
+       <span class="navbar-toggler-icon"></span>
+     </button>
+
+
+     <div class="collapse navbar-collapse" id="menuNavbar">
+       <ul class="navbar-nav ms-auto">
+         <li class="nav-item"><a class="nav-link" href="#inicio">Início</a></li>
+         <li class="nav-item"><a class="nav-link" href="#cardapio">Cardápio</a></li>
+         <li class="nav-item"><a class="nav-link" href="#sobre">Sobre Nós</a></li>
+         <li class="nav-item"><a class="nav-link" href="#reservas">Reservas</a></li>
+         <li class="nav-item"><a class="nav-link" href="#galeria">Galeria</a></li>
+         <li class="nav-item"><a class="nav-link" href="#contato">Fale Conosco</a></li>
+         <li class="nav-item"><a class="nav-link" href="#pedidos">Pedidos Online</a></li>
+         <li class="nav-item"><a class="nav-link" href="#promocoes">Promoções</a></li>
+       </ul>
+     </div>
+   </div>
+ </nav>
+
+
+ <!-- ================== 1. PÁGINA INICIAL ================== -->
+ <section id="inicio" class="bg-light py-5">
+   <div class="container">
+     <h1 class="mb-3">Página Inicial</h1>
+     <p>
+        Seja bem-vindo ao Sushi House! Aqui você encontrará a melhor culinária japonesa com o melhor ambiente para acomodar sua família.
+        Temos como objetivo proporcionar ao cliente a melhor experiência possível!
+     </p>
+     <p>
+       Nosso cardápio é baseado na culinária japonesa. Esperamos um público que aprecie a cultura oriental, no qual servimos os 
+       pratos em um ambiente familiar. 
+     </p>
+
+     <!-- TODO: Adicionar um carousel ou imagem de destaque aqui -->
+     <p class="mt-4">
+       <div id="carouselSushiHouse" class="carousel slide mb-4" data-bs-ride="carousel">
+
+  <!-- Indicadores -->
+  <div class="carousel-indicators">
+    <button type="button" data-bs-target="#carouselSushiHouse" data-bs-slide-to="0" class="active"></button>
+    <button type="button" data-bs-target="#carouselSushiHouse" data-bs-slide-to="1"></button>
+    <button type="button" data-bs-target="#carouselSushiHouse" data-bs-slide-to="2"></button>
+  </div>
+
+  <!-- Imagens -->
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="img/interior1.jpg" class="d-block w-100" alt="Interior do restaurante">
+    </div>
+
+    <div class="carousel-item">
+      <img src="img/pratos1.jpg" class="d-block w-100" alt="Pratos japoneses">
+    </div>
+
+    <div class="carousel-item">
+      <img src="img/exterior1.jpg" class="d-block w-100" alt="Fachada do restaurante">
+    </div>
+  </div>
+
+  <!-- Controles -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselSushiHouse" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselSushiHouse" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+
+</div>
+
+     </p>
+
+
+     <!-- TODO: Inserir horários de funcionamento (tabela ou lista) -->
+     <p class="mt-4">
+       <div class="mt-4">
+  <h3>Horário de Funcionamento</h3>
+
+  <table class="table table-bordered table-striped mt-3">
+    <thead class="table-dark">
+      <tr>
+        <th>Dia da Semana</th>
+        <th>Horário</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>Segunda-feira</td>
+        <td>Fechado</td>
+      </tr>
+      <tr>
+        <td>Terça a Quinta-feira</td>
+        <td>12h00 – 15h00 | 18h00 – 22h00</td>
+      </tr>
+      <tr>
+        <td>Sexta-feira</td>
+        <td>12h00 – 15h00 | 18h00 – 23h00</td>
+      </tr>
+      <tr>
+        <td>Sábado</td>
+        <td>12h00 – 23h00</td>
+      </tr>
+      <tr>
+        <td>Domingo</td>
+        <td>12h00 – 21h00</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+     </p>
+   </div>
+ </section>
+
+
+ <!-- ================== 2. CARDÁPIO ================== -->
+ <section id="cardapio" class="py-5">
+   <div class="container">
+     <p>
+       <div class="container mt-5">
+
+  <!-- Descrição do cardápio -->
+  <h2>Cardápio</h2>
+  <p>
+    Nosso cardápio é inspirado na culinária japonesa tradicional, oferecendo
+    pratos preparados com ingredientes frescos e de alta qualidade.
+    Ele está organizado em categorias para facilitar a escolha do cliente.
+  </p>
+
+  <!-- ENTRADAS -->
+  <h4 class="mt-4">Entradas</h4>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Guioza</h5>
+          <p class="card-text">Pastéis japoneses recheados com carne e legumes.</p>
+          <p class="fw-bold">R$ 18,00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Harumaki</h5>
+          <p class="card-text">Rolinho primavera crocante recheado com legumes.</p>
+          <p class="fw-bold">R$ 16,00</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- PRATOS PRINCIPAIS -->
+  <h4 class="mt-4">Pratos Principais</h4>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Combo Sushi House</h5>
+          <p class="card-text">Seleção de sushis e sashimis variados.</p>
+          <p class="fw-bold">R$ 79,90</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Temaki de Salmão</h5>
+          <p class="card-text">Temaki recheado com salmão fresco e cream cheese.</p>
+          <p class="fw-bold">R$ 29,90</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- SOBREMESAS -->
+  <h4 class="mt-4">Sobremesas</h4>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Mochi</h5>
+          <p class="card-text">Doce japonês feito de arroz.</p>
+          <p class="fw-bold">R$ 14,00</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- BEBIDAS -->
+  <h4 class="mt-4">Bebidas</h4>
+  <div class="row">
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Refrigerante</h5>
+          <p class="card-text">Lata 350ml.</p>
+          <p class="fw-bold">R$ 6,00</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Chá Verde</h5>
+          <p class="card-text">Chá tradicional japonês.</p>
+          <p class="fw-bold">R$ 8,00</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+     </p>
+
+
+     <!-- TODO: Criar estrutura para categorias (entradas, principais, sobremesas, bebidas) -->
+     <p class="mt-3">
+       <div class="container mt-4">
+
+  <h3>Categorias do Cardápio</h3>
+
+  <div class="list-group mt-3">
+    <a href="#entradas" class="list-group-item list-group-item-action">
+      Entradas
+    </a>
+    <a href="#principais" class="list-group-item list-group-item-action">
+      Pratos Principais
+    </a>
+    <a href="#sobremesas" class="list-group-item list-group-item-action">
+      Sobremesas
+    </a>
+    <a href="#bebidas" class="list-group-item list-group-item-action">
+      Bebidas
+    </a>
+  </div>
+
+</div>
+
+     </p>
+     <ul>
+       <li>Entradas</li>
+       <li>Pratos principais</li>
+       <li>Sobremesas</li>
+       <li>Bebidas</li>
+     </ul>
+
+
+     <!-- TODO: Adicionar itens com descrições, preços e imagens -->
+     <p class="mt-3">
+      <div class="container mt-4">
+
+  <h3>Detalhes dos Itens</h3>
+
+  <div class="row">
+
+    <!-- Item 1 -->
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="img/guioza.jpg" class="card-img-top" alt="Guioza">
+        <div class="card-body">
+          <h5 class="card-title">Guioza</h5>
+          <p class="card-text">
+            Pastéis japoneses recheados com carne suína e legumes.
+          </p>
+          <p class="fw-bold">R$ 18,00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 - Especial do Dia -->
+    <div class="col-md-4">
+      <div class="card mb-3 border-warning">
+        <img src="img/harumaki.jpg" class="card-img-top" alt="Harumaki">
+        <div class="card-body">
+          <h5 class="card-title">
+            Harumaki
+            <span class="badge bg-warning text-dark">Especial do Dia</span>
+          </h5>
+          <p class="card-text">
+            Rolinho primavera crocante recheado com legumes.
+          </p>
+          <p class="fw-bold">R$ 16,00</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3 - Prato Sazonal -->
+    <div class="col-md-4">
+      <div class="card mb-3 border-danger">
+        <img src="img/temaki.jpg" class="card-img-top" alt="Temaki de Salmão">
+        <div class="card-body">
+          <h5 class="card-title">
+            Temaki de Salmão
+            <span class="badge bg-danger">Prato Sazonal</span>
+          </h5>
+          <p class="card-text">
+            Temaki recheado com salmão fresco e cream cheese.
+          </p>
+          <p class="fw-bold">R$ 29,90</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+     </p>
+   </div>
+ </section>
+
+
+ <!-- ================== 3. SOBRE NÓS ================== -->
+ <section id="sobre" class="bg-light py-5">
+   <div class="container">
+     <h2 class="mb-3">Sobre Nós</h2>
+
+     <p>
+       <div class="container mt-4">
+    <h3>História do Restaurante</h3>
+    <p>
+      O Sushi House nasceu do sonho de levar a culinária japonesa tradicional
+      para um ambiente acolhedor e familiar. Fundado por amantes da gastronomia
+      oriental, o restaurante foi criado com o objetivo de unir sabor, qualidade
+      e respeito à cultura japonesa.
+    </p>
+    <p>
+      Desde sua inauguração, o Sushi House busca oferecer pratos preparados com
+      ingredientes frescos, mantendo técnicas tradicionais e prezando pela
+      satisfação de cada cliente. Nossa missão é proporcionar uma experiência
+      única, onde cada refeição se torne um momento especial.
+    </p>
+</div>
+
+     </p>
+
+     <p>
+       <div class="container mt-4">
+  <h3>Perfil do Chef</h3>
+  <p>
+    Nosso chef principal possui formação em gastronomia e especialização em
+    culinária japonesa. Ao longo de sua carreira, adquiriu experiência em
+    restaurantes renomados, aperfeiçoando técnicas tradicionais e modernas.
+  </p>
+  <p>
+    Sua especialidade está na preparação de sushis e sashimis, sempre buscando
+    equilíbrio entre sabor, apresentação e qualidade. O chef lidera a equipe
+    com dedicação e paixão pela arte da culinária oriental.
+  </p>
+</div>
+
+     </p>
+
+     <p>
+       <div class="container mt-4">
+  <h3>Prêmios e Reconhecimentos</h3>
+
+  <ul class="list-group mt-3">
+    <li class="list-group-item">
+      Destaque em gastronomia oriental pela revista local Gourmet Brasil
+    </li>
+    <li class="list-group-item">
+      Reconhecimento como um dos melhores restaurantes japoneses da região
+    </li>
+    <li class="list-group-item">
+      Avaliação positiva em blogs gastronômicos especializados
+    </li>
+  </ul>
+</div>
+
+     </p>
+   </div>
+ </section>
+
+
+ <!-- ================== 4. RESERVAS ================== -->
+ <section id="reservas" class="py-5">
+   <div class="container">
+     <h2 class="mb-3">Reservas</h2>
+
+
+     <h3 class="h5 mt-3">Formulário de Reserva</h3>
+     <p>
+      <div class="container mt-4">
+
+  <form>
+    <div class="mb-3">
+      <label class="form-label">Nome</label>
+      <input type="text" class="form-control" placeholder="Digite seu nome">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">E-mail</label>
+      <input type="email" class="form-control" placeholder="Digite seu e-mail">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Telefone</label>
+      <input type="tel" class="form-control" placeholder="(00) 00000-0000">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Data da Reserva</label>
+      <input type="date" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Horário</label>
+      <input type="time" class="form-control">
+    </div>
+
+    <div class="mb-3">
+      <label class="form-label">Número de Pessoas</label>
+      <input type="number" class="form-control" min="1" placeholder="Quantidade">
+    </div>
+
+    <button type="submit" class="btn btn-primary">
+      Reservar
+    </button>
+  </form>
+</div>
+
+     </p>
+
+
+     <!-- TODO: Formulário Bootstrap de reserva -->
+
+
+     <h3 class="h5 mt-3">Política de Reservas</h3>
+     <p>
+       <div class="container mt-4">
+  <h3>Política de Reservas</h3>
+
+  <div class="accordion mt-3" id="politicaReservas">
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#cancelamento">
+          Cancelamento
+        </button>
+      </h2>
+      <div id="cancelamento" class="accordion-collapse collapse show">
+        <div class="accordion-body">
+          Cancelamentos devem ser realizados com pelo menos 2 horas de antecedência.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#atraso">
+          Tolerância de Atraso
+        </button>
+      </h2>
+      <div id="atraso" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          Tolerância máxima de 15 minutos. Após esse período, a reserva poderá ser cancelada.
+        </div>
+      </div>
+    </div>
+
+    <div class="accordion-item">
+      <h2 class="accordion-header">
+        <button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#confirmacao">
+          Confirmação
+        </button>
+      </h2>
+      <div id="confirmacao" class="accordion-collapse collapse">
+        <div class="accordion-body">
+          A confirmação da reserva será enviada por e-mail ou WhatsApp.
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+     </p>
+   </div>
+ </section>
+
+
+ <!-- ================== 5. GALERIA ================== -->
+ <section id="galeria" class="bg-light py-5">
+   <div class="container">
+     <h2 class="mb-3">Galeria</h2>
+     <p>
+       <div class="container mt-4">
+
+  <div class="row mt-3">
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="img/prato1.jpg" class="card-img-top" alt="Prato japonês">
+        <div class="card-body">
+          <p class="card-text">Prato especial da casa</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="img/interior1.jpg" class="card-img-top" alt="Interior do restaurante">
+        <div class="card-body">
+          <p class="card-text">Ambiente interno do restaurante</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <img src="img/evento.jpg" class="card-img-top" alt="Evento especial">
+        <div class="card-body">
+          <p class="card-text">Eventos e comemorações</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+     </p>
+
+
+     <!-- TODO: Grid de imagens / cards com fotos -->
+
+       <div class="container mt-4">
+  <h3>Avaliações de Clientes</h3>
+
+  <div class="row mt-3">
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Ana Silva</h5>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p class="card-text">
+            Atendimento excelente e pratos muito saborosos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Carlos Pereira</h5>
+          <p>⭐⭐⭐⭐</p>
+          <p class="card-text">
+            Ambiente agradável e comida de ótima qualidade.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-md-4">
+      <div class="card mb-3">
+        <div class="card-body">
+          <h5 class="card-title">Mariana Costa</h5>
+          <p>⭐⭐⭐⭐⭐</p>
+          <p class="card-text">
+            Experiência incrível, recomendo a todos.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+     </p>
+   </div>
+ </section>
+
+
+ <!-- ================== 6. FALE CONOSCO ================== -->
+ <section id="contato" class="py-5">
+   <div class="container">
+     <h2 class="mb-3">Fale Conosco</h2>
+
+
+     <h3 class="h5 mt-3">Informações de Contato</h3>
+     <p>
+       <div class="container my-5">
+  <div class="row">
+    <div class="col-md-6">
+      <h2>Onde Estamos</h2>
+      <p class="lead">Visite-nos ou entre em contato pelos canais abaixo:</p>
+      <hr>
+      <address>
+        <strong>Sushi House</strong><br>
+        Rua do Salmão, 142<br>
+        Bairro Oriental, São Paulo - SP<br>
+        CEP: 01000-000<br>
+        <abbr title="Telefone">Telefone:</abbr> (11) 98765-4321<br>
+        <abbr title="E-mail">E-mail:</abbr> <a href="mailto:contato@sushihouse.com.br">contato@sushihouse.com.br</a>
+      </address>
+    </div>
+    
+    <div class="col-md-6">
+      <h2>Localização</h2>
+      <div class="ratio ratio-4x3" style="min-height: 250px; background-color: #e9ecef; border: 1px solid #ced4da; display: flex; align-items: center; justify-content: center;">
+        <p class="text-muted">Mapa (Google Maps Embed)</p>
+      </div>
+    </div>
+  </div>
+</div>
+     </p>
+
+
+     <!-- TODO: Organizar informações de contato e mapa usando o grid do Bootstrap -->
+
+
+     <h3 class="h5 mt-3">Formulário de Contato</h3>
+     <p>
+       <div class="container my-5">
+  <div class="row">
+    <div class="col-md-8 offset-md-2">
+      <h2>Fale Conosco</h2>
+      <p class="text-muted">Preencha o formulário abaixo para enviar sua dúvida, sugestão ou elogio. Responderemos o mais breve possível.</p>
+      
+      <form>
+        <div class="mb-3">
+          <label for="inputNome" class="form-label">Nome Completo</label>
+          <input type="text" class="form-control" id="inputNome" placeholder="Seu nome" required>
+        </div>
+        
+        <div class="mb-3">
+          <label for="inputEmail" class="form-label">Endereço de E-mail</label>
+          <input type="email" class="form-control" id="inputEmail" placeholder="seu.email@exemplo.com" required>
+          <div class="form-text">Nunca compartilharemos seu e-mail com terceiros.</div>
+        </div>
+
+        <div class="mb-3">
+          <label for="inputAssunto" class="form-label">Assunto</label>
+          <input type="text" class="form-control" id="inputAssunto" placeholder="Ex: Reserva, Dúvida sobre o Cardápio, Sugestão" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="textareaMensagem" class="form-label">Mensagem</label>
+          <textarea class="form-control" id="textareaMensagem" rows="5" placeholder="Digite sua mensagem aqui..." required></textarea>
+        </div>
+        
+        <button type="submit" class="btn btn-dark btn-lg">Enviar Contato</button>
+      </form>
+    </div>
+  </div>
+</div>
+     </p>
+
+
+     <!-- TODO: Formulário Bootstrap de contato -->
+   </div>
+ </section>
+
+
+ <!-- ================== 7. PEDIDOS ONLINE / ENTREGA ================== -->
+ <section id="pedidos" class="bg-light py-5">
+   <div class="container">
+     <h2 class="mb-3">Pedidos Online e Entrega</h2>
+     <p>
+       <div class="container my-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h2>Como Fazer Seu Pedido</h2>
+      <p class="lead">No Sushi House, oferecemos diversas formas rápidas e fáceis para você saborear nossos pratos, seja retirando no local ou recebendo no conforto de sua casa.</p>
+      
+      <div class="card shadow-sm p-3">
+        <h4 class="card-title text-primary">Opções de Pedido:</h4>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <i class="bi bi-globe me-2"></i> 
+            <strong>Pelo Site:</strong> Acesse nosso cardápio online e finalize seu pedido com segurança. (Ideal para pedidos com agendamento).
+          </li>
+          <li class="list-group-item">
+            <i class="bi bi-whatsapp me-2"></i> 
+            <strong>WhatsApp:</strong> Envie uma mensagem para (11) 98765-4321 com seu pedido e endereço. (Rápido e prático).
+          </li>
+          <li class="list-group-item">
+            <i class="bi bi-telephone me-2"></i> 
+            <strong>Por Telefone:</strong> Ligue para (11) 3000-0000 para pedidos e tirar dúvidas.
+          </li>
+          <li class="list-group-item">
+            <i class="bi bi-box me-2"></i> 
+            <strong>Retirada no Local:</strong> Faça seu pedido antecipadamente e retire no nosso balcão. Sem taxa de entrega!
+          </li>
+        </ul>
+      </div>
+      
+    </div>
+  </div>
+</div>
+     </p>
+     <p>
+       <div class="container my-5">
+  <div class="row">
+    <div class="col-md-10 offset-md-1">
+      <h2>Áreas de Entrega e Prazos</h2>
+      <p class="text-muted">Verifique se o seu bairro está na nossa área de cobertura e confira o tempo estimado para receber seu pedido. A taxa de entrega varia conforme a região.</p>
+      
+      <div class="table-responsive">
+        <table class="table table-striped table-hover align-middle">
+          <thead class="table-dark">
+            <tr>
+              <th scope="col">Bairro</th>
+              <th scope="col">Tempo Estimado</th>
+              <th scope="col">Taxa de Entrega</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Centro</td>
+              <td>20 - 30 min</td>
+              <td>R$ 5,00</td>
+            </tr>
+            <tr>
+              <td>Oriental</td>
+              <td>25 - 35 min</td>
+              <td>R$ 7,50</td>
+            </tr>
+            <tr>
+              <td>Jardim do Sol</td>
+              <td>35 - 45 min</td>
+              <td>R$ 10,00</td>
+            </tr>
+            <tr>
+              <td>Vila Nova</td>
+              <td>40 - 50 min</td>
+              <td>R$ 12,00</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
+      <p class="small text-danger mt-3">
+        * Os tempos de entrega são estimados e podem variar em horários de pico ou devido a condições de trânsito.
+      </p>
+    </div>
+  </div>
+</div>
+     </p>
+   </div>
+ </section>
+
+
+ <!-- ================== 9–10. PROMOÇÕES & AVALIAÇÕES ONLINE ================== -->
+ <section id="promocoes" class="py-5">
+   <div class="container">
+     <h2 class="mb-3">Promoções Especiais</h2>
+     <p>
+       <div class="container my-5">
+  <h2>Promoções Especiais</h2>
+  <p class="lead">Aproveite nossas ofertas exclusivas e programas de fidelidade!</p>
+  
+  <div class="alert alert-warning d-flex align-items-center" role="alert">
+    <i class="bi bi-star-fill me-2"></i>
+    <div>
+      <strong>OFERTA RELÂMPAGO:</strong> 🍣 20% de Desconto em todos os Combinados Grandes, somente às Terças-feiras!
+    </div>
+  </div>
+
+  <div class="row row-cols-1 row-cols-md-3 g-4">
+    <div class="col">
+      <div class="card h-100 border-primary">
+        <div class="card-header bg-primary text-white">
+          <h5 class="mb-0">Dia do Temaki</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Toda **Quarta-feira**, o segundo Temaki sai pela metade do preço. Válido para todos os sabores.</p>
+        </div>
+        <div class="card-footer">
+          <span class="badge bg-info">Desconto Específico</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="col">
+      <div class="card h-100 border-success">
+        <div class="card-header bg-success text-white">
+          <h5 class="mb-0">Fidelidade Sushi</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">A cada R$ 100,00 gastos, acumule pontos e troque por pratos exclusivos ou 10% de desconto na próxima compra.</p>
+        </div>
+        <div class="card-footer">
+          <span class="badge bg-success">Fidelidade</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="col">
+      <div class="card h-100 border-danger">
+        <div class="card-header bg-danger text-white">
+          <h5 class="mb-0">Combo Família</h5>
+        </div>
+        <div class="card-body">
+          <p class="card-text">Combo com 50 peças variadas + 1 Coca-Cola 2L por apenas R$ 129,90. Perfeito para o fim de semana!</p>
+        </div>
+        <div class="card-footer">
+          <span class="badge bg-danger">Combo Exclusivo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+     </p>
+
+
+     <h3 class="h5 mt-3">Avaliações Online</h3>
+     <p>
+       <div class="container my-5">
+  <h2>Avaliações Online</h2>
+  <p class="lead">Veja o que nossos clientes dizem sobre nós e deixe sua própria opinião!</p>
+  
+  <ul class="list-group list-group-flush">
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      Google Avaliações
+      <div>
+        <span class="badge bg-warning text-dark me-2">4.8 / 5</span>
+        <a href="#" class="btn btn-sm btn-outline-dark">Ver Avaliações</a>
+      </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      TripAdvisor
+      <div>
+        <span class="badge bg-warning text-dark me-2">4.7 / 5</span>
+        <a href="#" class="btn btn-sm btn-outline-dark">Deixe sua Opinião</a>
+      </div>
+    </li>
+    <li class="list-group-item d-flex justify-content-between align-items-center">
+      iFood / Plataforma de Delivery
+      <div>
+        <span class="badge bg-warning text-dark me-2">4.9 / 5</span>
+        <a href="#" class="btn btn-sm btn-outline-dark">Ver Nota</a>
+      </div>
+    </li>
+  </ul>
+  
+  <p class="text-muted mt-3">Agradecemos a todos os clientes que dedicam um tempo para nos avaliar!</p>
+</div>
+     </p>
+   </div>
+ </section>
+
+
+ <!-- ================== FOOTER ================== -->
+ <footer class="bg-dark text-white text-center py-3">
+   <small>© 2025 SUSHI HOUSE - Todos os direitos reservados.</small>
+ </footer>
+
+
+ <!-- BOOTSTRAP JS -->
+ <script
+   src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+ </script>
+</body>
+</html>
